@@ -4,23 +4,15 @@ using System.Text;
 
 namespace LifeEngine
 {
-    public abstract class LifeObject
+    public class LifeObject : ILifeObject
     {
-        public string Id { get; set; }
-        private int LifeAge { get; set; }
+        // Constants
+        public string Id { get; private set; }
         public bool IsAlive { get; set; }
 
-
+        public int MaxAge { get; set; }
         public LifeFormGender Gender { get; set; }
 
-        // How healthy is the life form?
-        public double HealthQuotient { get; set; }
-
-        // How likeable is the life form?
-        public double CharismaQuotient { get; set; }
-
-        //Quotient to determine adherence to gender
-        public double GenderQuotient { get; set; }
 
         /// <summary>
         /// Identifies life form gender
@@ -33,22 +25,10 @@ namespace LifeEngine
             Both
         }
 
-        public void IncrementAgeByMonth() 
-        {
-            if (VerifyIsAlive())
-                this.LifeAge++;
-        }
-
-        public Decimal Age()
-        {
-                return (Convert.ToDecimal(this.LifeAge) / 10);
-        }
-
         public void TerminateLifeForm()
         {
             if (VerifyIsAlive())
                 this.IsAlive = false;
-
         }
 
         private bool VerifyIsAlive()
@@ -59,6 +39,20 @@ namespace LifeEngine
                 throw (new Exception("CODE: LIFEFORM TERMINATED"));
         }
 
+        private void GenerateID()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
+
+        public LifeObject()
+        {
+            GenerateID();
+            IsAlive = true;
+        }
+
+
     }
+
 
 }

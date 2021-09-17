@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace LifeFormApplication
 {
     class Program
@@ -7,9 +8,16 @@ namespace LifeFormApplication
         static void Main(string[] args)
         {
 
-            
 
-            Console.WriteLine("Hello World!");
+            for (int i = 0; i < 100; i++)
+            {
+               // Human person = new Human(125);
+
+               // Console.WriteLine(person.Id + " ; " + person.Gender + " ; " + person.CharismaQuotient.ToString("F"));
+            }
+
+
+            
         }
     }
 }
