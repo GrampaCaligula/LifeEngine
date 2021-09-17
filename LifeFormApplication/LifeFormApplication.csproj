@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LifeForms\LifeForms.csproj" />
+    <ProjectReference Include="..\LifeForms\LifeFormTypes.csproj" />
   </ItemGroup>
 
 </Project>

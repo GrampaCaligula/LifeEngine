@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LifeEngine
 {
-    public class LifeObject : ILifeObject
+    public abstract class LifeObject : ILifeObject
     {
         // Constants
         public string Id { get; private set; }
@@ -12,7 +12,13 @@ namespace LifeEngine
 
         public int MaxAge { get; set; }
         public LifeFormGender Gender { get; set; }
+        public int Age { get; set; }
 
+        public LifeObject()
+        {
+            GenerateID();
+            IsAlive = true;
+        }
 
         /// <summary>
         /// Identifies life form gender
@@ -43,14 +49,6 @@ namespace LifeEngine
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-
-        public LifeObject()
-        {
-            GenerateID();
-            IsAlive = true;
-        }
-
 
     }
 

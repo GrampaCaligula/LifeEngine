@@ -4,7 +4,7 @@ using LifeEngine;
 namespace LifeForms
 {
 
-    public class Human : LifeObject, IHuman
+    public class Human : LifeObject
     {
         int maxAge = 125;
 
